@@ -1,0 +1,21 @@
+{# src/KSH/BibeBundle/Resources/views/Biberon/edit.html.twig #}
+
+{% extends "KSHBibeBundle::layout.html.twig" %}  
+
+{% block body %}
+<div class="pageheader">
+	<div class="media">
+		<div class="pageicon pull-left">
+			<i class="fa fa-pencil"></i>
+		</div>
+		<div class="media-body">
+			<h4>Modifier le biberon</h4>
+		</div>
+	</div>
+</div>
+<div>
+	<br/>
+	{{ include("KSHBibeBundle:Biberon:form.html.twig") }}
+	{{ parent() }}
+</div>
+{% endblock %}

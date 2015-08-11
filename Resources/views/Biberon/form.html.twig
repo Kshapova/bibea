@@ -1,0 +1,67 @@
+{# src/KSH/BibeBundle/Resources/views/Biberon/form.html.twig #}
+
+{# Cette vue n'hérite de personne, elle sera incluse par d'autres vues qui,
+   elles, hériteront probablement du layout. Je dis « probablement » car,
+   ici pour cette vue, on n'en sait rien et c'est une info qui ne nous concerne pas. #}
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<div class="col-md-6">
+
+	<div class="form-group">
+		{{ form_label(form.baby, 'Enfant', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+			{{ form_widget(form.baby, { 'attr': {'class': 'form-control'} }) }}
+		</div>
+	</div>
+
+	<div class="form-group">
+		{{ form_label(form.date, 'Date', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+		 	<div class="bootstrap-datepicker">
+				{{ form_widget(form.date, {'id': 'datepicker', 'attr': {'class': 'form-control hasDatepicker'} }) }}
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		{{ form_label(form.waterVolume, 'Volume d\'eau, ml', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+			{{ form_widget(form.waterVolume, { 'attr': {'class': 'form-control'} }) }}
+		</div>
+	</div>
+
+	<div class="form-group">
+		{{ form_label(form.mesure, 'Mesurette', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+			{{ form_widget(form.mesure, { 'attr': {'class': 'form-control'} }) }}
+		</div>
+	</div>
+
+	<div class="form-group">
+		{{ form_label(form.waterBrand, 'Type d\'eau', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+			{{ form_widget(form.waterBrand, { 'attr': {'class': 'form-control'} }) }}
+		</div>
+	</div>
+
+	<div class="form-group">
+		{{ form_label(form.milkBrand, 'Marque du lait', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+			{{ form_widget(form.milkBrand, { 'attr': {'class': 'form-control'} }) }}
+		</div>
+	</div>
+
+	<div class="form-group">
+		{{ form_label(form.comment, 'Commentaire', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+			{{ form_widget(form.comment, { 'attr': {'class': 'form-control'} }) }}
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-8">
+			{{ form_widget(form.save) }}
+		</div>
+	</div>
+</div>
+	{{ form(form) }}
+{{ form_end(form) }}

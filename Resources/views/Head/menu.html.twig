@@ -1,0 +1,24 @@
+
+<h5 class="leftpanel-title">Navigation</h5>
+
+<ul class="nav nav-pills nav-stacked">
+          {% for name, link in menu %}
+            {% if route==name %}  
+              <li class='active'> {% else %} <li> {% endif %}
+                 <a href={{link.link}}>
+                  {% if name=="ksh_bibe_bibis" %} <i class="fa fa-edit"></i> {% endif %}
+
+                  {% if name=="ksh_bibe_index" %} <i class="fa fa-home"></i> {% endif %}
+
+                  {% if name=="ksh_bibe_add" %} <i class="fa fa-pencil"></i> {% endif %}
+
+                  {% if name=="ksh_bibe_profil" %} <i class="fa fa-users"></i> {% endif %}
+
+                  {% if name=="ksh_bibe_settings" %} <i class="fa fa-cogs"></i> {% endif %}
+
+
+                    <span> {{link.label}} </span> 
+                  </a>
+              </li>
+          {% endfor %}    
+</ul> 

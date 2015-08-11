@@ -1,0 +1,14 @@
+{# src/KSH/BibeBundle/Resources/views/Form/fields.html.twig #}
+
+{% block choice_widget_expanded %}
+{% spaceless %}
+    <div {{ block('widget_container_attributes') }}>
+    {% for child in form %}
+        <div class="rdio rdio-success">
+            {{ form_widget(child) }}
+            {{ form_label(child) }}
+         </div>
+    {% endfor %}
+    </div>
+{% endspaceless %}
+{% endblock choice_widget_expanded %}

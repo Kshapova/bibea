@@ -1,0 +1,14 @@
+{# src/KSH/BibeBundle/Resources/views/Biberon/view.html.twig #}
+
+{% extends "KSHBibeBundle::layout.html.twig" %}  
+        
+{% block title %}{{ parent() }} - View{% endblock %}
+
+{% block body %}
+	<p>{{ bibi.id }}</p>
+	<p>{{ bibi.Date|date('d/m/Y - h:m') }}</p>
+	<p>{{ bibi.WaterVolume }}</p>
+	<p>{{ bibi.WaterBrand }}</p>
+	<p>{{ bibi.MilkBrand }}</p>
+
+{% endblock %}

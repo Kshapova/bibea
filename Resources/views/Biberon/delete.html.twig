@@ -1,0 +1,34 @@
+{# src/KSH/BibeBundle/Resources/views/Biberon/delete.html.twig #}
+
+{% extends "KSHBibeBundle::layout.html.twig" %}  
+        
+
+{% block body %}
+<div class="pageheader">
+	<div class="media">
+		<div class="pageicon pull-left">
+			<i class="fa fa-times"></i>
+		</div>
+		<div class="media-body">
+			<h4>Supprimer un biberon</h4>
+		</div>
+	</div>
+</div>
+<div class="col-sm-9">
+  <p>
+    Etes-vous certain de vouloir supprimer le biberon "{{ biberon.waterBrand }} - {{ biberon.milkBrand }}" pris le {{ biberon.date|date('d/m/Y H:i') }} ?
+  </p>
+
+  {# On met l'id de l'annonce dans la route de l'action du formulaire #}
+  <form action="{{ path('ksh_bibe_delete', {'id': biberon.id}) }}" method="post">
+    <a href="{{ path('ksh_bibe_index') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Annuler
+    </a>
+    {# Ici j'ai écrit le bouton de soumission à la main #}
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+    {# Ceci va générer le champ CSRF #}
+    {{ form_rest(form) }}
+  </form>
+
+{% endblock %}

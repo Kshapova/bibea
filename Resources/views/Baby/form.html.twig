@@ -1,0 +1,67 @@
+{# src/KSH/BibeBundle/Resources/views/Baby/form.html.twig #}
+
+ {% form_theme form 'KSHBibeBundle:Form:fields.html.twig' %} 
+
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<div class="col-md-6">
+	<div class="form-group">
+		{{ form_label(form.psedo, 'Psedo', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+			{{ form_widget(form.psedo, { 'attr': {'class': 'form-control'} }) }}
+		</div>
+	</div>
+	<div class="form-group">
+		{{ form_label(form.imageFile, 'Photo', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+			{{ form_widget(form.imageFile, { 'attr': {'class': ''} }) }}
+		</div>
+	</div>
+
+	<div class="form-group">
+		{{ form_label(form.name, 'Prénom', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+			{{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
+		</div>
+	</div>
+
+	<div class="form-group">
+		{{ form_label(form.surname, 'Nom', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+			{{ form_widget(form.surname, { 'attr': {'class': 'form-control'} }) }}
+		</div>
+	</div>
+
+	<div class="form-group">
+		{{ form_label(form.birthDate, 'Date de naissance', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+		 	<div class="bootstrap-datepicker">
+				{{ form_widget(form.birthDate, {'id': 'datepicker', 'attr': {'class': 'form-control hasDatepicker'} }) }}
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		{{ form_label(form.bibiStartDate, '1er biberon', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+		 	<div class="bootstrap-datepicker">
+				{{ form_widget(form.bibiStartDate, {'id': 'datepicker', 'attr': {'class': 'form-control hasDatepicker'} }) }}
+			</div>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		{{ form_label(form.sex, 'Fille ou Garçon ?', {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		<div class="col-sm-8">
+			{{ form_widget(form.sex) }}
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-8">
+			{{ form_widget(form.save) }}
+		</div>
+	</div>
+</div>
+	{{ form(form) }}
+{{ form_end(form) }}

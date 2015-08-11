@@ -1,0 +1,22 @@
+{# src/KSH/BibeBundle/Resources/views/Baby/edit.html.twig #}
+
+{% extends "KSHBibeBundle::layout.html.twig" %}  
+        
+
+{% block body %}
+<div class="pageheader">
+	<div class="media">
+		<div class="pageicon pull-left">
+			<i class="fa fa-pencil"></i>
+		</div>
+		<div class="media-body">
+			<h4>Modifier le profil de mon enfant</h4>
+		</div>
+	</div>
+</div>
+<div>
+	<br/>
+	{{ include("KSHBibeBundle:Baby:form.html.twig") }}
+	{{ parent() }}
+</div>
+{% endblock %}

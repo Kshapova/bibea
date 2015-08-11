@@ -1,0 +1,33 @@
+{# src/KSH/BibeBundle/Resources/views/Baby/delete.html.twig #}
+
+{% extends "KSHBibeBundle::layout.html.twig" %}  
+        
+{% block title %}{{ parent() }} - Delete{% endblock %}
+
+{% block body %}
+<div class="pageheader">
+	<div class="media">
+		<div class="pageicon pull-left">
+			<i class="fa fa-times"></i>
+		</div>
+		<div class="media-body">
+			<h4>Supprimer un profil</h4>
+		</div>
+	</div>
+</div>
+<div class="col-sm-9">
+  <p>
+    Etes-vous certain de vouloir supprimer le profil de <b>{{ baby.name }} {{ baby.surname }}</b> alias "{{ baby.psedo }}"" ?
+  </p>
+  <form action="{{ path('ksh_baby_delete', {'id': baby.id}) }}" method="post">
+    <a href="{{ path('ksh_bibe_profil') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Annuler
+    </a>
+    {# Ici j'ai écrit le bouton de soumission à la main #}
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+    {# Ceci va générer le champ CSRF #}
+    {{ form_rest(form) }}
+  </form>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{# src/KSH/BibeBundle/Resources/views/Baby/profil.html.twig #}
+
+{% extends "KSHBibeBundle::layout.html.twig" %}  
+        
+{% block body %}
+{% for flashMessage in app.session.flashbag.get('notice') %}
+    <div class="alert alert-success">{{ flashMessage }}</div>
+{% endfor %} 
+<div class="pageheader">
+	<div class="media">
+		<div class="pageicon pull-left">
+			<i class="fa fa-users"></i>
+		</div>
+		<div class="media-body">
+			<h4>Mes enfants</h4>
+		</div>
+	</div>
+</div>
+<div class="col-sm-9">
+<br/>
+<div class="col-md-offset-10">
+    <a href="{{ path('ksh_baby_add') }}" class="btn btn-success btn-rounded">
+        <i class="fa fa-plus"></i>
+        Ajouter
+    </a>
+</div>
+<div class="list-group contact-group">
+	{% for baby in babies %}
+
+        <a href="{{ path('ksh_baby_view', {'id': baby.id}) }}" class="list-group-item" title="Consulter le profil" data-toggle="tooltip" data-placement="left"  >
+            <div class="media">
+                <div class="pull-left">
+                    {# On vérifie qu'une image soit bien associée à l'annonce #}
+                    {% if baby.imageName is not null %}
+                        {% set img = 'uploads/img/' ~ baby.imageName %}
+                        <img class="img-circle img-online" src="{{ img | apply_filter('baby_image') }}" alt="{{ baby.psedo }}">
+                    {% else %}
+                        <img class="img-circle img-online" src="{{ asset('bundles/kshbibe/images/user.png') }}" alt="Enfant">
+
+                    {% endif %}
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{ baby.psedo }}<small>{{ baby.name }} {{ baby.surname }}</small></h4>
+                    <div class="media-content">
+                        <ul class="list-unstyled">
+                            {% if baby.sex == 'F' %}
+                                <li><i class="fa fa-female"></i>Fille</li>
+                            {% else %}
+                                <li><i class="fa fa-male"></i>Garçon</li>
+                            {% endif%} 
+                            <li><i class="fa fa-calendar"></i> Date de naissance {{ baby.birthDate|date('d/m/Y') }}</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- media -->
+        </a><!-- list-group -->
+                                    
+	{% else %}
+    		<li> Pas d'enfants enregistrés </li>
+  	{% endfor %}
+  	<br/>
+  	<br/>		
+	{{ parent() }}
+</div>	
+</div>
+{% endblock %}

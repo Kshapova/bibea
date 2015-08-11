@@ -1,0 +1,59 @@
+ksh_bibe_index:
+    path:     /
+    defaults: { _controller: KSHBibeBundle:Front:index }
+
+ksh_bibe_bibis:
+    path:     /carnet-repas
+    defaults: { _controller: KSHBibeBundle:Front:bibis }
+
+ksh_bibe_view:
+    path:      /biberon/view/{id}
+    defaults:  { _controller: KSHBibeBundle:Biberon:view }
+    requirements:
+        id: \d+
+    
+ksh_bibe_add:
+    path:      /biberon/add
+    defaults:  { _controller: KSHBibeBundle:Biberon:add }
+
+ksh_bibe_edit:
+    path:      /biberon/edit/{id}
+    defaults:  { _controller: KSHBibeBundle:Biberon:edit }
+    requirements:
+        id: \d+
+
+ksh_bibe_delete:
+    path:      /biberon/delete/{id}
+    defaults:  { _controller: KSHBibeBundle:Biberon:delete }
+    requirements:
+        id: \d+
+
+ksh_baby_view:
+    path:     /baby/view/{id}
+    defaults: { _controller: KSHBibeBundle:Baby:view }
+    requirements:
+        id: \d+
+
+ksh_baby_add:
+    path:     /baby/add
+    defaults: { _controller: KSHBibeBundle:Baby:add }
+
+ksh_baby_edit:
+    path:     /baby/edit/{id}
+    defaults: { _controller: KSHBibeBundle:Baby:edit }
+    requirements:
+        id: \d+
+
+ksh_baby_delete:
+    path:     /baby/delete/{id}
+    defaults: { _controller: KSHBibeBundle:Baby:delete }
+    requirements:
+        id: \d+
+
+ksh_bibe_profil:
+    path:     /profil
+    defaults: { _controller: KSHBibeBundle:Baby:profil }
+
+ksh_bibe_settings:
+    path:     /settings
+    defaults: { _controller: KSHBibeBundle:Baby:settings }
