@@ -60,7 +60,7 @@
                         <br/>
                         <h4 class="media-heading">Évolution du nombre des biberons consommés par jour</h4>    
                         <div id="domIdFollowersNbBibi{{ baby.id }}" style="width:100%;height:200px"> </div>
-                        <table id="indexTable{{ baby.id }}" class="table table-striped table-bordered responsive dataTable no-footer" role="grid" aria-describedby="basicTable_info">
+                        <table id="indexTable{{ baby.id }}" class="table table-striped table-bordered" cellspacing="0" role="grid" aria-describedby="basicTable_info">
                             <thead role="row">
                                 <th>Num</th>
                                 <th>Date</th>
@@ -97,6 +97,7 @@
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.pie.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.time.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.8/js/dataTables.bootstrap.min.js"></script>
 
     
     <script> 
@@ -117,10 +118,10 @@
                     table = $("#indexTable{{baby.id}}").DataTable( {
                         "language": {
                             "lengthMenu": "Afficher _MENU_ ligne par page",
-                            "zeroRecords": "Nothing found - sorry",
+                            "zeroRecords": "Rien trouvé - désolé",
                             "info": "Page _PAGE_ sur _PAGES_",
                             "infoEmpty": "No records available",
-                            "infoFiltered": "(filtered from _MAX_ total records)",
+                            "infoFiltered": "(filtrer sur _MAX_ lignes)",
                             "search": "Recherche:",
                             "paginate": {
                                 "first":      "First",
